@@ -1,39 +1,31 @@
 {
-  "name": "streetfeast-website-fe",
+  "name": "leo-da-vinci",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:bun": "bun --bun next dev",
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs": "^5.0.1",
-    "@supabase/supabase-js": "^2.76.1",
-    "axios": "^1.12.2",
-    "dayjs": "^1.11.18",
-    "jwt-decode": "^4.0.0",
-    "libphonenumber-js": "^1.12.25",
-    "next": "15.5.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-google-recaptcha-v3": "^1.11.0",
-    "react-icons": "^5.5.0",
-    "react-loading-skeleton": "^3.5.0",
-    "react-toastify": "^11.0.5",
-    "zipcodes": "^8.0.0",
-    "zustand": "^5.0.8"
+    "aos": "^2.3.4",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/google.maps": "^3.58.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "15.5.2",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

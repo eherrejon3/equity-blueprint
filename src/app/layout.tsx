@@ -1,54 +1,16 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Inter, Spectral, MonteCarlo, Sacramento } from "next/font/google";
 import "./globals.css";
-import { LayoutContent } from "@/components/LayoutContent";
-import Providers from "@/components/Providers";
-
-
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-lexend",
-});
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { AosInit } from "@/components/aos-init";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://streetfeast.com'),
-  title: {
-    default: 'StreetFeast - Discover Amazing Street Food Near You',
-    template: '%s | StreetFeast',
-  },
-  description: 'Find the best food trucks, street vendors, and pop-up restaurants in your area. Real-time locations, reviews, and menus. Download the StreetFeast app today!',
-  keywords: ['street food', 'food trucks', 'food vendors', 'pop-up restaurants', 'food app', 'local food', 'mobile food', 'food discovery'],
-  authors: [{ name: 'StreetFeast' }],
-  creator: 'StreetFeast',
-  publisher: 'StreetFeast',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  title: "Leonardo da Vinci Website",
+  description: "The work and story of Da Vinci",
   openGraph: {
-    title: 'StreetFeast - Discover Amazing Street Food Near You',
-    description: 'Find the best food trucks, street vendors, and pop-up restaurants in your area. Real-time locations, reviews, and menus.',
-    url: 'https://streetfeast.com',
-    siteName: 'StreetFeast',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'StreetFeast - Discover Amazing Street Food',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'StreetFeast - Discover Amazing Street Food Near You',
-    description: 'Find the best food trucks, street vendors, and pop-up restaurants in your area.',
-    images: ['/twitter-image.jpg'],
-    creator: '@streetfeast',
+    title: "Leonardo da Vinci Website",
+    description: "Fictional website about the famous polymath",
   },
   robots: {
     index: true,
@@ -56,12 +18,30 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
     },
-  }
+  },
 };
+
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-spectral",
+});
+
+export const montecarlo = MonteCarlo({
+  weight: "400",
+  variable: "--font-montecarlo",
+});
+
+export const sacramento = Sacramento({
+  weight: "400",
+  variable: "--font-sacramento",
+});
 
 export default function RootLayout({
   children,
@@ -70,12 +50,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lexend.className}>
-        <Providers>
-          <LayoutContent>
-            {children}
-          </LayoutContent>
-        </Providers>
+      <body className="w-full overflow-x-hidden">
+        <Header></Header>
+        {children}
+        <AosInit></AosInit>
+        <Footer></Footer>
       </body>
     </html>
   );
