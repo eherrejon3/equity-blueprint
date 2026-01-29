@@ -7,12 +7,12 @@
 }
 
 @theme inline {
-  /*Colors */
-  --color-shade-one: #ece0b9;
-  --color-shade-two: #baaf89;
-  --color-shade-three: #8a805c;
-  --color-shade-four: #5c5433;
-  --color-shade-five: #322c0c;
+  /*Colors (lightest-darkest)*/
+  --color-shade-one: #ffeedd;
+  --color-shade-two: #cfddc8;
+  --color-shade-three: #aec3b0;
+  --color-shade-four: #6c7da0;
+  --color-shade-five: #293790;
   --color-text: oklch(0.15 0 70);
 
   /*Spacing*/

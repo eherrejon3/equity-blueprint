@@ -1,13 +1,30 @@
+"use client";
 import Image from "next/image";
 import { Card } from "@/components/card";
 import { Timeline } from "@/components/timeline";
+import Parallax from "@/components/parallax";
+import { useEffect } from 'react';
+import Lenis from 'lenis'
 import Link from "next/link";
 import { Store } from "lucide-react";
 
 export default function Home() {
+  useEffect( () => {
+    const lenis = new Lenis()
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, []) 
+
   return (
     <main className="flex flex-col  justify-start items-center min-h-fit w-full">
-      <section className="bg-[url('/images/OIG1.webp')] w-full min-h-55 bg-cover bg-center flex justify-center items-center">
+      <Parallax />
+      
+      {/* <section className="bg-[url('/images/OIG1.webp')] w-full min-h-55 bg-cover bg-center flex justify-center items-center">
         <div className="backdrop-blur-3xl p-sm flex flex-col justify-center items-center gap-md rounded-2xl">
           <h1 className="font-semibold text-size-xl md:text-size-heading text-shade-five font-name ba">
             Leonardo da Vinci
@@ -19,7 +36,7 @@ export default function Home() {
             “Learning never exhausts the mind.”
           </p>
         </div>
-      </section>
+      </section> */}
       <section className="flex flex-col justify-center items-center gap-xl bg-shade-one shadow-2xl h-180 w-full md:flex-row p-sm">
         <Image
           src="/images/pexels-davinci-statue.webp"
